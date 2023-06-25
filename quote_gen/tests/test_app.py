@@ -6,7 +6,7 @@ def test_get_index_route(app, client):
     WHEN '/' page is requested (GET)
     THEN check that the index page is displayed
     """
-    res = client.get('/get_quote')
+    res = client.get('/')
     assert res.status_code == 200
     expected = {'hello': 'world'}
     assert b"Quote Gen Service" in res.data
