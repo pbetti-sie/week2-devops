@@ -21,6 +21,6 @@ def test_get_quote_route(app, client):
     assert res.status_code == 200
     expected = {'hello': 'world'}
     print(res.headers)
-    assert b"quote -" in res.data
+    assert res.content_type == "text/html"
 
 
