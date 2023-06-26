@@ -8,7 +8,6 @@ def test_get_index_route(app, client):
     """
     res = client.get('/')
     assert res.status_code == 200
-    expected = {'hello': 'world'}
     assert b"Quote Gen Service" in res.data
 
 def test_get_quote_route(app, client):
@@ -19,7 +18,6 @@ def test_get_quote_route(app, client):
     """
     res = client.get('/quote')
     assert res.status_code == 200
-    expected = {'hello': 'world'}
     assert res.content_type == "text/html; charset=utf-8"
 
 
